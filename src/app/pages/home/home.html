@@ -1,1 +1,48 @@
-<p>home works!</p>
+<div class="container">
+    <div class="form-container">
+        <h1>Conversor de Moedas</h1>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <label>Converter de:</label>
+            <div class="custom-select">
+
+                <div class="selected" (click)="toggleFrom(); $event.stopPropagation()">
+                    <img [src]="selectedFrom.flag" />
+                    {{ selectedFrom.code }} - {{ selectedFrom.name }}
+                </div>
+
+                <div class="options" *ngIf="isOpenFrom">
+                    <div class="option" *ngFor="let c of currencies" (click)="selectFrom(c, $event)">
+                        <img [src]="c.flag" />
+                        {{ c.code }} - {{ c.name }}
+                    </div>
+                </div>
+
+            </div>
+
+            <label>Converter para:</label>
+            <div class="custom-select">
+
+                <div class="selected" (click)="toggleTo(); $event.stopPropagation()">
+                    <img [src]="selectedTo.flag" />
+                    {{ selectedTo.code }} - {{ selectedTo.name }}
+                </div>
+
+                <div class="options" *ngIf="isOpenTo">
+                    <div class="option" *ngFor="let c of currencies" (click)="selectTo(c, $event)">
+                        <img [src]="c.flag" />
+                        {{ c.code }} - {{ c.name }}
+                    </div>
+                </div>
+
+            </div>
+            <label>Valor:</label>
+            <input formControlName="valor">
+            <button type="submit">Converter</button>
+        </form>
+    </div>
+    <div class="response-container">
+        <img src="currency-icon.png" alt="">
+        <div class="response">$57,27</div>
+        <div class="currency">1 BRL = 0,19 USD</div>
+    </div>
+</div>
