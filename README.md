@@ -1,59 +1,131 @@
-# NgCurrencyConverter
+# 💱 NgCurrencyConverter
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.1.
+A modern currency converter built with Angular, featuring a custom dropdown UI, real-time conversion, and a clean, responsive layout.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Features
+
+* 🌍 Convert between major world currencies
+* 🎯 Custom dropdown with flags (no native select)
+* ⚡ Reactive Forms integration
+* 🎨 Clean and modern UI
+* 🔄 Ready for API integration
+* 📱 Responsive layout (ready for improvements)
+
+---
+
+## 🛠️ Tech Stack
+
+* Angular 17+ (Standalone Components)
+* TypeScript
+* SCSS
+* Reactive Forms
+
+---
+
+## 📦 Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/your-username/ng-currency-converter.git
+cd ng-currency-converter
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+---
+
+## ▶️ Development Server
+
+Run the app locally:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Then open:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
+## 🧱 Project Structure
+
+```
+src/
+  app/
+    pages/
+      home/
+    data/
+      currencies.ts
+    services/
 ```
 
-## Building
+---
 
-To build the project run:
+## 🎯 Key Implementation
 
-```bash
-ng build
-```
+### Custom Dropdown
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+* Built from scratch (no native `<select>`)
+* Supports images (flags)
+* Independent state for each dropdown
+* Handles click propagation correctly
 
-## Running unit tests
+### Form Handling
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+* Reactive Forms
+* Dynamic value updates
+* Ready for API integration
+
+---
+
+## 📈 Future Improvements
+
+* 🔄 Swap currencies button
+* 🌐 Real-time API integration
+* 📉 Conversion history
+* 🌙 Dark mode
+* 📱 Mobile optimization
+
+---
+
+## 🧪 Running Tests
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 📦 Build
 
 ```bash
-ng e2e
+ng build
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Production files will be available in:
 
-## Additional Resources
+```
+dist/
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
+
+## 📄 License
+
+This project is open source and available under the MIT License.
+
+---
+
+## 💡 Author
+
+Developed by Henrique Simon
