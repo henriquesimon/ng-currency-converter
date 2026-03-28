@@ -1,47 +1,70 @@
 <div class="container">
     <div class="form-container">
         <h1>Conversor de Moedas</h1>
+
         <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+            <!-- FROM -->
             <label>Converter de:</label>
             <div class="custom-select">
 
                 <div class="selected" (click)="toggleFrom(); $event.stopPropagation()">
-                    <img [src]="selectedFrom.flag" />
-                    {{ selectedFrom.code }} - {{ selectedFrom.name }}
+                    <div class="left">
+                        <img [src]="selectedFrom.flag" />
+                        {{ selectedFrom.code }} - {{ selectedFrom.name }}
+                    </div>
                     <span class="arrow">▼</span>
                 </div>
 
-                <div class="options" *ngIf="isOpenFrom">
-                    <div class="option" *ngFor="let c of currencies" (click)="selectFrom(c, $event)">
+                @if (isOpenFrom) {
+                <div class="options">
+                    @for (c of currencies; track c.code) {
+                    <div class="option" (click)="selectFrom(c, $event)">
                         <img [src]="c.flag" />
                         {{ c.code }} - {{ c.name }}
                     </div>
+                    }
                 </div>
+                }
 
             </div>
 
+            <!-- TO -->
             <label>Converter para:</label>
             <div class="custom-select">
 
                 <div class="selected" (click)="toggleTo(); $event.stopPropagation()">
-                    <img [src]="selectedTo.flag" />
-                    {{ selectedTo.code }} - {{ selectedTo.name }}
+                    <div class="left">
+                        <img [src]="selectedTo.flag" />
+                        {{ selectedTo.code }} - {{ selectedTo.name }}
+                    </div>
                     <span class="arrow">▼</span>
                 </div>
 
-                <div class="options" *ngIf="isOpenTo">
-                    <div class="option" *ngFor="let c of currencies" (click)="selectTo(c, $event)">
+                @if (isOpenTo) {
+                <div class="options">
+                    @for (c of currencies; track c.code) {
+                    <div class="option" (click)="selectTo(c, $event)">
                         <img [src]="c.flag" />
                         {{ c.code }} - {{ c.name }}
                     </div>
+                    }
                 </div>
+                }
 
             </div>
+
+            <!-- INPUT -->
             <label>Valor:</label>
-            <input formControlName="valor">
+            <input formControlName="valor" />
+
+            <!-- BUTTON -->
             <button type="submit">Converter</button>
+
         </form>
     </div>
+
+    <!-- RESULT -->
     <div class="response-container">
         <img src="currency-icon.png" alt="">
         <div class="response">$57,27</div>

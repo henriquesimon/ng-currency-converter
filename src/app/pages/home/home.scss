@@ -1,17 +1,15 @@
 .container {
     width: 900px;
     height: 530px;
-    background-color: white;
     display: flex;
-    flex-direction: row;
-    flex: 2;
     border-radius: 20px;
-    box-shadow: 3px 11px 26px 0px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    box-shadow: 3px 11px 26px rgba(0, 0, 0, 0.1);
 }
 
+/* ================= FORM ================= */
+
 .form-container {
-    height: 100%;
-    width: 100%;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -20,110 +18,124 @@
 
     h1 {
         font-size: 25px;
+        margin-bottom: 20px;
     }
 
     form {
-        flex-direction: column;
         display: flex;
+        flex-direction: column;
+        width: 70%;
+        gap: 12px;
+    }
 
-        select {
-            font-size: 20px;
-            border-radius: 12px;
-            padding: 8px;
-            border: none;
-            margin-bottom: 15px;
-            background-color: #D9D9D9;
-        }
+    input,
+    select,
+    .custom-select {
+        font-size: 18px;
+        border-radius: 12px;
+        border: none;
+        padding: 10px;
+        background: #D9D9D9;
+    }
 
-        input {
-            font-size: 25px;
-            border-radius: 12px;
-            padding: 3px 8px 3px 8px;
-            border: none;
-            margin-bottom: 15px;
-            background-color: #D9D9D9;
-        }
+    input {
+        font-size: 20px;
+    }
 
-        button {
-            font-size: 25px;
-            border-radius: 12px;
-            border: none;
-            background-color: #6D4DBE;
-            color: azure;
-            margin-bottom: 15px;
-            padding: 3px;
+    button {
+        font-size: 20px;
+        border-radius: 12px;
+        border: none;
+        background: #6D4DBE;
+        color: #fff;
+        padding: 10px;
+        cursor: pointer;
+        transition: 0.2s ease;
+    }
 
-
-        }
-
-        button:hover {
-            background-color: #38168d;
-            cursor: pointer;
-            transform: scale(1.05);
-        }
+    button:hover {
+        background: #38168d;
+        transform: scale(1.05);
     }
 }
 
+/* ================= RESPONSE ================= */
+
 .response-container {
     flex: 1;
-    width: auto;
-    align-items: center;
-    justify-content: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
     img {
-        margin-top: -40px;
-        width: 350px;
-        height: 300px;
+        width: 320px;
+        height: auto;
+        margin-bottom: 10px;
     }
 }
 
 .response {
-    color: #40792C;
+    font-size: 36px;
     font-weight: bold;
-    font-size: 40px;
-    margin-bottom: 10px;
+    color: #40792C;
+    margin-bottom: 8px;
 }
 
 .currency {
     color: grey;
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
 }
+
+/* ================= CUSTOM SELECT ================= */
 
 .custom-select {
     position: relative;
     cursor: pointer;
-    font-size: 20px;
-    border-radius: 12px;
-    border: none;
-    margin-bottom: 15px;
-    background-color: #D9D9D9;
 }
 
 .selected {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    gap: 10px;
-    background: #D9D9D9;
+    align-items: center;
     padding: 10px;
     border-radius: 10px;
+    background: #D9D9D9;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .arrow {
     font-size: 12px;
+    transition: transform 0.2s ease;
 }
 
 .options {
     position: absolute;
     top: 110%;
     width: 100%;
-    background: #D9D9D9;
+    background: #fff;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     z-index: 10;
+    overflow: hidden;
+    animation: fadeIn 0.15s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .option {
@@ -131,11 +143,14 @@
     align-items: center;
     gap: 10px;
     padding: 10px;
+    transition: background 0.2s;
 }
 
 .option:hover {
     background: #f0f0f0;
 }
+
+/* ================= IMG ================= */
 
 img {
     width: 20px;
